@@ -1,0 +1,34 @@
+body {
+  background-color:#bcf1c3;
+}
+
+h4 {
+   color: #009963;
+   padding: -8mm;
+   font-family: "Open Sans", sans-serif;
+}
+
+button {
+  color: #009963;
+  background-color: azure;
+  border-radius: 10mm;
+}
+
+sourceBox {
+  width: 90%;
+  height: 100%;
+}
+container {
+  border: 2px solid #34cef5;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+.darker {
+ border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}

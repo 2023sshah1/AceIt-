@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>repl.it</title>
+	<link href="agenda.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<div id="AgendaInput">
+		<div class="container" id="container">
+			<h3> Welcome to the Agenda builder! Keep entering tasks until you are done </h3>
+		</div>
+		<div class="container" id="container">
+			<h4> Enter a task! </h4>
+		</div>
+		<form name="sourceBox1">
+			<label> Task </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;&nbsp;<input type="input" id="task" value="" id="textBox"></input>
+  </form>
+  <br>
+  <form name="sourceBox2"> 
+    <label> Description </label> &nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="des" value="" ></input>
+      </form>
+      <br>
+  <form name="sourceBox3"> 
+    <label> Difficulty 1-5 </label> &nbsp;&nbsp;&nbsp&nbsp;&nbsp;<input type="text" id="myDiff" value="" ></input>
+  </form>
+  <br>
+  <form name="sourceBox3"> 
+   <label> People Assigned </label> <input type="text" id="people" value="" ></input>
+  </form>
+  <br>
+  <button id="myButton" > Create Task! </button>
+<script>
+       document.getElementById("myButton").addEventListener("click", handleClick);
+
+    function handleClick() {
+      	event.preventDefault();
+      task1 = document.getElementById("task").value;
+      des = document.getElementById("des").value;
+      dif = document.getElementById("myDiff").value;
+      person = document.getElementById("people").value;
+       input_value = task1 + " - " + dif + "<br>" + des + "<br>" + "People assigned: " + person;
+     chats = localStorage.getItem('e');
+     if(chats) {
+       chats = JSON.parse(chats);
+       chats.push(input_value);
+       localStorage.setItem('e', JSON.stringify(chats));
+      // alert(JSON.stringify(chats))
+      // alert("hello:" + JSON.stringify(chats));
+     }
+     else {
+       myArray = [input_value];
+       localStorage.setItem('e', JSON.stringify(myArray));
+       //alert("hello:" + JSON.stringify(localStorage.getItem('e')));
+     }
+    
+     var para = document.createElement("DIV");
+     para.className = "darker";
+     para.innerHTML =input_value;
+     document.getElementById("AgendaInput").appendChild(para);
+}
+</script>
+</body>
+<html>

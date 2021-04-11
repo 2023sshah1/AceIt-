@@ -1,0 +1,60 @@
+nav {
+  height: 5rem;
+  background-color: #329D9C;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #329D9C;
+}
+
+li {
+  display: block;
+  float: left;
+  color: white;
+  padding: 2% 5%;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li:hover {
+  background-color: #111;
+}
+
+#logo{
+  width: 25px;
+  height: 20px;
+}
+
+.grid-container {
+  display: list-item;
+  grid-template-columns: auto auto;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  justify-content: center;
+}
+
+.grid-container1 {
+  display: inline-block;
+  grid-template-columns: auto auto;
+}
+
+.grid-item {
+  width: 2rem;
+  height: 2rem;
+  background-color: #329D9C;
+  align-content: center;
+  margin-bottom: 2rem;
+}
+
+iframe {
+  border-radius: 12px;
+  border-color: #96fae3;
+  border-width: 5px;
+  padding-bottom: 0rem;
+  width: 98%;
+  height: 40rem;
+}

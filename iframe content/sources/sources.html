@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>repl.it</title>
+	<link href="sources.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="sourceInput">
+		<div class="container" id="container">
+			<h4> Sources: put important links here! </h4>
+		</div>
+<form name="sourceBox"> 
+    <label> Source Name </label> &nbsp;<input type="text" id="myName" value=""></input>
+  </form>
+  <form name="sourceBox"> 
+   <label> Description </label>&nbsp;&nbsp;&nbsp; <input type="text" id="myDes" value=""></input>
+  </form>
+  <form name="sourceBox"> 
+    <label> URL </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="myURL" value=""></input>
+  </form>
+  <button id="myButton" > Enter Source! </button>
+  <script>
+       document.getElementById("myButton").addEventListener("click", handleClick);
+
+    function handleClick() {
+      	event.preventDefault();
+      name = document.getElementById("myName").value;
+      descrip = document.getElementById("myDes").value;
+      url = document.getElementById("myURL").value;
+      input_value = name + " - " + descrip + "<br>" + url.link(url);
+     chats = localStorage.getItem('s');
+     if(chats) {
+       chats = JSON.parse(chats);
+       chats.push(input_value);
+       localStorage.setItem('s', JSON.stringify(chats));
+       //alert(JSON.stringify(chats))
+       //alert("hello:" + JSON.stringify(chats));
+     }
+     else {
+       myArray = [input_value];
+       localStorage.setItem('s', JSON.stringify(myArray));
+       //alert("hello:" + JSON.stringify(localStorage.getItem('s')));
+     }
+    
+     var para = document.createElement("DIV");
+     para.className = "darker";
+     para.innerHTML =input_value;
+     document.getElementById("sourceInput").appendChild(para);
+}
+</script>
+</body>
+<html>

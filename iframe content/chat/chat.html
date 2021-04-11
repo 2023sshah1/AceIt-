@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>repl.it</title>
+	<link href="chat.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<script src="chat.js">
+
+	</script>
+	<div id="chatMessages">
+		<div class="container" id="container">
+			<p>Let's get started!</p>
+		</div>
+    <script>
+      array = localStorage.getItem('message');
+      //if(array) 
+        array = JSON.parse(array);
+
+      for(int x = 0; x < array.length; x++) {
+         var para = document.createElement("DIV");
+         para.className = "darker";
+         para.innerHTML =array[x];
+         document.getElementById("chatMessages").appendChild(para);
+      }
+    </script>
+	</div>
+	<form name="chatbox">
+		<label> Chat here! </label><input type="text" id="myInput" value=""></input>
+    <button id="myButton" > Send </button>
+    <script>
+      document.getElementById("myButton").addEventListener("click", handleClick);
+
+    function handleClick() {
+      	event.preventDefault();
+      input_value = document.getElementById("myInput").value
+     chats = localStorage.getItem('message');
+     if(chats) {
+       chats = JSON.parse(chats);
+       chats.push(input_value);
+       localStorage.setItem('message', JSON.stringify(chats));
+       //alert(JSON.stringify(chats))
+       //alert("hello:" + JSON.stringify(chats));
+     }
+     else {
+       myArray = [input_value];
+       localStorage.setItem('message', JSON.stringify(myArray));
+       //alert("hello:" + JSON.stringify(localStorage.getItem('message')));
+     }
+    
+     var para = document.createElement("DIV");
+     para.className = "darker";
+     para.innerHTML =input_value;
+     document.getElementById("chatMessages").appendChild(para);
+}
+</script>
+  </form>
+</body>
+
+</html>
